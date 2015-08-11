@@ -24,9 +24,6 @@ def try_divide():
         print("The quotient of %d and %d is: %d with remainder: %d " % (num_1, num_2, quotient, remainder))
     except ZeroDivisionError:
         print("There is no quotient, because you cannot divide by zero")
-    finally:
-        print("What?")
-
 
 print("The sum of %d and %d is: %d" % (num_1, num_2, summed))
 print("The difference of %d and %d is: %d" % (num_1, num_2, difference))
