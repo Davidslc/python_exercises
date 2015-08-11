@@ -21,7 +21,7 @@ def try_divide():
     try:
         quotient = num_1 / num_2
         remainder = num_1 % num_2
-        print("The quotient of %d and %d is: %d with remainder: %d " % (num_1, num_2, quotient, remainder()))
+        print("The quotient of %d and %d is: %d with remainder: %d " % (num_1, num_2, quotient, remainder))
     except ZeroDivisionError:
         print("There is no quotient, because you cannot divide by zero")
     finally:
