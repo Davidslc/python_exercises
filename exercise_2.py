@@ -22,7 +22,7 @@ barrels_required = float(gallons / 19.5)
 cost = float(gallons * price)
 
 
-print("Original number of gallons is: %.1f" % (gallons))
+print("Original number of gallons is: %.1f" % gallons)
 print("%.1f gallons is the equivalent of %.2f liters" % (gallons, liters_equivalent))
 print("%.1f gallons of gasoline requires %.1f barrels of oil" % (gallons, barrels_required))
 print("%.1f gallons of gasoline produces %.1f pounds of CO2" % (gallons, co2_produced))
