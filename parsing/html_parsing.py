@@ -18,6 +18,12 @@ class MyHtmlParser(HTMLParser):
         pos = self.getpos()
         print("At line: ", pos[0], " position ", pos[1])
 
+    # Function to handle character and text data (tag contents)
+    def handle_data(self, data):
+        print("Encountered some data:", data)
+        pos = self.getpos()
+        print("At line: ", pos[0], " position ", pos[1])
+
     # Function to handle the processing of HTML comments.
     def handle_comment(self, data):
         print("Encountered comment:", data)
