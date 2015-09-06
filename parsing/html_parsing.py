@@ -2,6 +2,7 @@ from html.parser import HTMLParser
 
 
 class MyHtmlParser(HTMLParser):
+    # function to handle the processing of HTML comments
     def handle_comment(self, data):
         print("Encountered comment:", data)
         pos = self.getpos()
