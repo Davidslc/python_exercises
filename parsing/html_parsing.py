@@ -1,10 +1,16 @@
 from html.parser import HTMLParser
 
+metacount = 0;
+
 
 class MyHtmlParser(HTMLParser):
     # Function to handle an opening tag in the doc.
     # This will be called when the closing ">" of the tag is reached.
     def handle_starttag(self, tag, attrs):
+        global metacount
+        print("Encountered a start tag:", tag)
+        if tag == "meta":
+            metacount += 1
         pos = self.getpos()  # Returns a tuple indication line and character
         print("At line: ", pos[0], " position ", pos[1])
         if attrs.__len__() > 0:
@@ -39,6 +45,7 @@ def main():
         contents = f.read()
         parser.feed(contents)
 
+    print("%d meta tags encountered" % metacount)
 
 if __name__ == "__main__":
     main()
