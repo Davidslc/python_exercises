@@ -2,7 +2,17 @@ from html.parser import HTMLParser
 
 
 class MyHtmlParser(HTMLParser):
-    # function to handle the processing of HTML comments
+    # Function to handle an opening tag in the doc.
+    # This will be called when the closing ">" of the tag is reached.
+    def handle_starttag(self, tag, attrs):
+        pos = self.getpos()  # Returns a tuple indication line and character
+        print("At line: ", pos[0], " position ", pos[1])
+        if attrs.__len__() > 0:
+            print("\tAttributes:")
+            for a in attrs:
+                print("\t", a[0], "=", a[1])
+
+    # Function to handle the processing of HTML comments.
     def handle_comment(self, data):
         print("Encountered comment:", data)
         pos = self.getpos()
