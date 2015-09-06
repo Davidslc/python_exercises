@@ -12,6 +12,12 @@ class MyHtmlParser(HTMLParser):
             for a in attrs:
                 print("\t", a[0], "=", a[1])
 
+    # Function to handle the ending tag.
+    def handle_endtag(self, tag):
+        print("Encountered an end tag:", tag)
+        pos = self.getpos()
+        print("At line: ", pos[0], " position ", pos[1])
+
     # Function to handle the processing of HTML comments.
     def handle_comment(self, data):
         print("Encountered comment:", data)
